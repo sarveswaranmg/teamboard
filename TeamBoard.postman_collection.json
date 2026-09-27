@@ -1,0 +1,275 @@
+{
+  "info": {
+    "_postman_id": "cef0910e-b464-4273-9e02-157a6273d31d",
+    "name": "TeamBoard",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "15807285"
+  },
+  "item": [
+    {
+      "name": "01 Register-Success",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"acmecorp\",\n    \"password\": \"securepass123\",\n    \"company_name\": \"Acme Corp\",\n    \"email\": \"dev@acmecorp.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000//api/auth/register/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "",
+            "api",
+            "auth",
+            "register",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02 Register - Duplicate Username",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"acmecorp\",\n    \"password\": \"securepass123\",\n    \"company_name\": \"Acme Corp\",\n    \"email\": \"dev@acmecorp.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000//api/auth/register/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "",
+            "api",
+            "auth",
+            "register",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 Login - Success",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"acmecorp\",\n    \"password\": \"securepass123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/login/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04 Login - Invalid Credentials",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"acmecorp\",\n    \"password\": \"wrongpassword\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/auth/login/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "05 KB Query — No Token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"search\": \"select_related\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/kb/query/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "kb",
+            "query",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "06 KB Query — Successful Search",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/kb/query/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "kb",
+            "query",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "07 KB Query — No Results",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/kb/query/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "kb",
+            "query",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "08 KB Query — Missing Search",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/kb/query/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "kb",
+            "query",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "09 Admin Usage — Client Gets 403",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10 Admin Usage - Admin Success",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "11 Admin Usage — Verify Top Search Terms",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
